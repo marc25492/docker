@@ -34,15 +34,15 @@ RUN update-alternatives --install /usr/bin/javac javac /opt/jdk1.8.0_112/bin/jav
 
 # Define environment variables
 ENV         RUNTIME_VERSION "3.8.3"
-ENV         MULE_HOME /opt/mule
+
 ENV			JAVA_HOME /usr/bin/java
 
 WORKDIR /opt
 RUN mkdir mule
 RUN cd mule
-RUN sudo wget http://s3.amazonaws.com/70aaf9be67f9bf88e5e78adcd7d6aa34/mule-ee-distribution-standalone-3.7.1.tar.gz 
-RUN sudo tar -xvzf mule-ee-distribution-standalone-3.7.1.tar.gz
-RUN sudo ./mule-enterprise-standalone-3.7.1/bin/mule
+RUN wget http://s3.amazonaws.com/70aaf9be67f9bf88e5e78adcd7d6aa34/mule-ee-distribution-standalone-3.7.1.tar.gz 
+RUN tar -xvzf mule-ee-distribution-standalone-3.7.1.tar.gz
+RUN ./mule-enterprise-standalone-3.7.1/bin/mule
 
 
 # Define mount points
