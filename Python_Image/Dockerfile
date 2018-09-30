@@ -1,7 +1,9 @@
-FROM centos:lastest
+FROM centos:latest
 
 RUN yum update -y
 
-RUN yum install pip -y
+RUN yum install epel-release -y
 
-RUN pip install python -y
+RUN yum install python-pip -y
+
+RUN pip install python
